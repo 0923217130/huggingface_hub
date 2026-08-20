@@ -4,7 +4,8 @@
 {{ card_data }}
 ---
 
-# Dataset Card for {{ pretty_name | default("Dataset Name", true) }}
+# Amharic Idiom Classification Using Multilingual Transformer Models
+
 
 <!-- Provide a quick summary of the dataset. -->
 
@@ -12,18 +13,56 @@
 
 ## Dataset Details
 
+## Dataset Description
+
+This dataset is designed for **Amharic figurative expression classification** using multilingual transformer models. It supports a three-class classification task that distinguishes between:
+
+- **Idiom**: Expressions whose meaning cannot be directly inferred from the literal meaning of their individual words.
+- **Proverb**: Traditional Amharic sayings that convey general wisdom, advice, or cultural knowledge.
+- **Literal**: Expressions whose meanings are interpreted directly from their surface form without figurative interpretation.
+
+The dataset aims to support research in low-resource natural language processing, particularly figurative language understanding, multilingual representation learning, and computational processing of Amharic.
+
+## Dataset Statistics
+
+| Category | Number of Samples |
+|---|---:|
+| Idiom | 1,148 |
+| Literal | 1,099 |
+| Proverb | 694 |
+| **Total** | **2,941** |
+
+*(Update these values if releasing the complete 6,224-expression version.)*
+
+## Dataset Structure
+
+Each instance contains the following fields:
+
+| Field | Description |
+|---|---|
+| `text` | Amharic expression used as model input |
+| `label` | Class label (Idiom, Proverb, Literal) |
+| `label_id` | Numerical label encoding |
+
+Example:
+
+```json
+{
+  "text": "አፉን ይዞ ተቀመጠ",
+  "label": "Idiom",
+  "label_id": 0
+}
 ### Dataset Description
 
-<!-- Provide a longer summary of what this dataset is. -->
+This dataset contains Amharic figurative expression samples designed for three-class classification: **Idiom**, **Proverb**, and **Literal**. The dataset was developed to support research on low-resource natural language processing, particularly figurative language understanding using multilingual transformer models.
 
-{{ dataset_description | default("", true) }}
+The dataset consists of manually annotated Amharic expressions collected from linguistic resources, educational materials, literary sources, and publicly available text resources. Each expression was categorized according to predefined annotation guidelines based on its semantic interpretation and usage. The dataset is intended for evaluating machine learning and deep learning models for Amharic figurative expression classification.
 
-- **Curated by:** {{ curators | default("[More Information Needed]", true)}}
-- **Funded by [optional]:** {{ funded_by | default("[More Information Needed]", true)}}
-- **Shared by [optional]:** {{ shared_by | default("[More Information Needed]", true)}}
-- **Language(s) (NLP):** {{ language | default("[More Information Needed]", true)}}
-- **License:** {{ license | default("[More Information Needed]", true)}}
-
+- **Curated by:** Anduamlak Abebe Fenta and Melkam Enyew Gashaw
+- **Funded by:** No external funding was received for the development of this dataset.
+- **Shared by:** Anduamlak Abebe Fenta and Melkam Enyew Gashaw
+- **Language(s) (NLP):** Amharic (አማርኛ)
+- **License:** Dataset and derived metadata are released under CC BY 4.0. Original source materials remain subject to their respective copyright restrictions.
 ### Dataset Sources [optional]
 
 <!-- Provide the basic links for the dataset. -->
