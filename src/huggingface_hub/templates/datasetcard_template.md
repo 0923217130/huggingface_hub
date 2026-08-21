@@ -9,7 +9,10 @@
 <!-- Provide a quick summary of the dataset. -->
 
 {{ dataset_summary | default("", true) }}
-
+DatasetCard.from_template(
+    pretty_name="Amharic Idiom Classification Dataset",
+    dataset_summary="This dataset contains Amharic figurative expressions...",
+)
 ## Dataset Details
 
 ### Dataset Description
